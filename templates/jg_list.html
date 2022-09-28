@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jogadores Favoritos</title>
+        <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/907/907690.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">    
+    </head>
+    <body>
+        <h1 style="text-align: center;">Jogadores Favoritos</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-dark table-striped table-hover ">
+                        <thead>
+                            
+                            <th>Nome</th>
+                            <th>Nacionalidade</th>
+                            <th>Posição</th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            {% for jg in jgs%}
+                            <tr>
+                                <td>{{jg.nome}}</td>
+                                <td>{{jg.nacionalidade}}</td>
+                                <td>{{jg.posicao}}</td>
+                                <td><a href="/jg/update/{{jg.id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Alterar</a></td>
+                                <td><a href="/jg/delete/{{jg.id}}" class="btn btn-danger btn-lg active" role="button" haria-pressed="true">Apagar</a></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="/jg/create" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Novo</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
